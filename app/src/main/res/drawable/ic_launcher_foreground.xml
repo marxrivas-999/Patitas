@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Huella de Patitas rellena de blanco (primer plano del ícono de la app). Va en res/drawable -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="1400" android:viewportHeight="1400">
+    <group android:scaleX="1.1" android:scaleY="1.1" android:pivotX="700" android:pivotY="700">
+    <group android:translateX="-5" android:translateY="21">
+        <path android:fillColor="#FFFFFF" android:strokeColor="#FFFFFF"
+            android:strokeWidth="14" android:strokeLineJoin="round"
+            android:pathData="M388 540 H500 A161 161 0 0 1 661 701 V812 A113 113 0 0 1 440 850 C425 805 395 772 355 755 A112 112 0 0 1 388 540 Z"/>
+        <path android:fillColor="#FFFFFF" android:strokeColor="#FFFFFF"
+            android:strokeWidth="14" android:strokeLineJoin="round"
+            android:pathData="M501,348 a64,64 0 1,0 128,0 a64,64 0 1,0 -128,0"/>
+        <path android:fillColor="#FFFFFF" android:strokeColor="#FFFFFF"
+            android:strokeWidth="14" android:strokeLineJoin="round"
+            android:pathData="M725,476 a64,64 0 1,0 128,0 a64,64 0 1,0 -128,0"/>
+        <path android:fillColor="#FFFFFF" android:strokeColor="#FFFFFF"
+            android:strokeWidth="14" android:strokeLineJoin="round"
+            android:pathData="M789,732 a64,64 0 1,0 128,0 a64,64 0 1,0 -128,0"/>
+        <path android:fillColor="#FFFFFF" android:strokeColor="#FFFFFF"
+            android:strokeWidth="14" android:strokeLineJoin="round"
+            android:pathData="M918 1074 L820 980 C790 952 783 934 783 918 C783 878 815 850 855 850 C880 850 900 860 918 876 C936 860 956 850 981 850 C1021 850 1056 878 1056 920 C1056 936 1048 954 1018 982 L918 1074 Z"/>
+    </group>
+    </group>
+</vector>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Huella del logotipo de Patitas -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <group android:rotation="-24" android:pivotX="22" android:pivotY="55">
+        <path
+            android:fillColor="#E9DDF8"
+            android:strokeColor="#885CC7"
+            android:strokeWidth="5"
+            android:strokeLineJoin="round"
+            android:strokeLineCap="round"
+            android:pathData="M13,55 a9,12.5 0 1,0 18,0 a9,12.5 0 1,0 -18,0 z" />
+    </group>
+    <group android:rotation="-8" android:pivotX="44" android:pivotY="30">
+        <path
+            android:fillColor="#E9DDF8"
+            android:strokeColor="#885CC7"
+            android:strokeWidth="5"
+            android:strokeLineJoin="round"
+            android:strokeLineCap="round"
+            android:pathData="M34.5,30 a9.5,13.5 0 1,0 19,0 a9.5,13.5 0 1,0 -19,0 z" />
+    </group>
+    <group android:rotation="8" android:pivotX="76" android:pivotY="30">
+        <path
+            android:fillColor="#E9DDF8"
+            android:strokeColor="#885CC7"
+            android:strokeWidth="5"
+            android:strokeLineJoin="round"
+            android:strokeLineCap="round"
+            android:pathData="M66.5,30 a9.5,13.5 0 1,0 19,0 a9.5,13.5 0 1,0 -19,0 z" />
+    </group>
+    <group android:rotation="24" android:pivotX="98" android:pivotY="55">
+        <path
+            android:fillColor="#E9DDF8"
+            android:strokeColor="#885CC7"
+            android:strokeWidth="5"
+            android:strokeLineJoin="round"
+            android:strokeLineCap="round"
+            android:pathData="M89,55 a9,12.5 0 1,0 18,0 a9,12.5 0 1,0 -18,0 z" />
+    </group>
+    <path
+        android:fillColor="#885CC7"
+        android:strokeColor="#885CC7"
+        android:strokeWidth="5"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:pathData="M60,106 C28,88 30,63 46,62 C53,62 58,66 60,71 C62,66 67,62 74,62 C90,63 92,88 60,106 Z" />
+</vector>
