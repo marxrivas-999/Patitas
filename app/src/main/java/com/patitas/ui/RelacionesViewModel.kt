@@ -16,11 +16,9 @@ class RelacionesViewModel @Inject constructor(
     repository: RelacionesRepository
 ) : ViewModel() {
 
-    // Uno a muchos: usuario -> mascotas
     val usuariosConMascotas: StateFlow<List<UsuarioConMascotas>> = repository.usuariosConMascotas()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 
-    // Muchos a uno: mascota -> usuario
     val mascotasConUsuario: StateFlow<List<MascotaConUsuario>> = repository.mascotasConUsuario()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 }

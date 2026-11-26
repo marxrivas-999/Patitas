@@ -48,7 +48,6 @@ import com.patitas.R
 import com.patitas.data.AppScreens
 import com.patitas.ui.theme.PatitasTheme
 
-// Pantalla 2: Inicio de sesión (verifica el usuario en la tabla USUARIO)
 @Composable
 fun LoginScreen(
     navController: NavController,
@@ -66,6 +65,7 @@ fun LoginScreen(
         hayError = error,
         onVolver = { navController.popBackStack() },
         onCrearCuenta = { navController.navigate(AppScreens.Registro.route) },
+        onPrivacidad = { navController.navigate(AppScreens.Privacidad.route) },
         onEntrar = {
             viewModel.iniciarSesion(usuario, contrasena) {
                 navController.navigate(AppScreens.Inicio.route) {
@@ -85,7 +85,8 @@ fun LoginContenido(
     hayError: Boolean,
     onVolver: () -> Unit,
     onEntrar: () -> Unit,
-    onCrearCuenta: () -> Unit = {}
+    onCrearCuenta: () -> Unit = {},
+    onPrivacidad: () -> Unit = {}
 ) {
     var mostrarContrasena by remember { mutableStateOf(false) }
     val textoError: (@Composable () -> Unit)? =
@@ -135,7 +136,6 @@ fun LoginContenido(
 
             Spacer(Modifier.height(14.dp))
 
-            // Campo de contraseña (con botón para mostrar u ocultar)
             Text(
                 text = stringResource(R.string.login_contrasena),
                 style = MaterialTheme.typography.labelLarge,
@@ -202,6 +202,17 @@ fun LoginContenido(
                     text = stringResource(R.string.login_crear_cuenta),
                     style = MaterialTheme.typography.labelLarge,
                     color = MaterialTheme.colorScheme.primary
+                )
+            }
+
+            androidx.compose.material3.TextButton(
+                onClick = onPrivacidad,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(
+                    text = stringResource(R.string.registro_leer_aviso),
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
 

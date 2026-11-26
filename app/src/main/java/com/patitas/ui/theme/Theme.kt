@@ -30,7 +30,6 @@ private val PatitasColorScheme = lightColorScheme(
     error                = ErrorPatitas
 )
 
-// Radios de la guía: 14 dp (campos y botones) y 22 dp (tarjetas)
 private val PatitasShapes = Shapes(
     small      = RoundedCornerShape(14.dp),
     medium     = RoundedCornerShape(14.dp),
@@ -40,7 +39,7 @@ private val PatitasShapes = Shapes(
 
 @Composable
 fun PatitasTheme(content: @Composable () -> Unit) {
-    // Sin dynamicColor (Android 12+) para conservar siempre la identidad morada de Patitas.
+
     MaterialTheme(
         colorScheme = PatitasColorScheme,
         typography = PatitasTypography,

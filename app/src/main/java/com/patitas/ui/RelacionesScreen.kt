@@ -29,8 +29,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.patitas.R
 
-// Pantalla de demostración de las relaciones de Room (equivale a RelacionesScreen de la Práctica 2),
-// con las tablas USUARIO y MASCOTA. Se abre desde Perfil.
 @Composable
 fun RelacionesScreen(
     navController: NavController,
@@ -80,7 +78,6 @@ fun RelacionesScreen(
                 }
             }
 
-            // 1) UNO A MUCHOS: cada usuario con la lista de sus mascotas
             item { Titulo(stringResource(R.string.relaciones_uno_a_muchos)) }
             // Las llaves (key) llevan un prefijo para que no se repitan entre secciones
             items(usuarios, key = { "um-${it.usuario.idUsuario}" }) { item ->
@@ -94,7 +91,6 @@ fun RelacionesScreen(
                 )
             }
 
-            // 2) MUCHOS A UNO: cada mascota con su dueño
             item { Titulo(stringResource(R.string.relaciones_muchos_a_uno)) }
             items(mascotas, key = { "mu-${it.mascota.idMascota}" }) { item ->
                 TarjetaTexto(

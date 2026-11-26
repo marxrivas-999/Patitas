@@ -13,7 +13,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import javax.inject.Singleton
 
-// Módulo de Hilt para la capa de red (igual que en la Práctica 2)
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
@@ -22,14 +21,14 @@ object NetworkModule {
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
         val loggingInterceptor = HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY // Útil para depuración en Logcat
+            level = HttpLoggingInterceptor.Level.BODY
         }
         return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
             .build()
     }
 
-    // Ignora los campos del JSON que no existen en el DTO
+
     private val retroJson = Json { ignoreUnknownKeys = true }
 
     @Provides

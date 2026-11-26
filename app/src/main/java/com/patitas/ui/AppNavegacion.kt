@@ -36,6 +36,9 @@ fun AppNavegacion() {
         composable(route = AppScreens.Relaciones.route) {
             RelacionesScreen(navController)
         }
+        composable(route = AppScreens.Privacidad.route) {
+            PrivacidadScreen(navController)
+        }
         composable(
             route = AppScreens.FormMascota.route,
             arguments = listOf(navArgument("id") { type = NavType.IntType })

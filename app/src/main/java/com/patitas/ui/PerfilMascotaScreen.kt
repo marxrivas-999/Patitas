@@ -45,7 +45,6 @@ import com.patitas.R
 import com.patitas.data.AppScreens
 import androidx.compose.foundation.shape.CircleShape
 
-// Pantalla 5: Perfil de mascota
 @Composable
 fun PerfilMascotaScreen(
     navController: NavController,
@@ -76,7 +75,7 @@ fun PerfilMascotaScreen(
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 20.dp, vertical = 12.dp)
         ) {
-            // Botón de regreso y etiqueta
+
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
@@ -99,7 +98,6 @@ fun PerfilMascotaScreen(
 
             Spacer(Modifier.height(16.dp))
 
-            // Fotografía grande
             ImagenDesdeRuta(
                 ruta = m.foto,
                 descripcion = m.nombre,
@@ -119,7 +117,6 @@ fun PerfilMascotaScreen(
 
             Spacer(Modifier.height(16.dp))
 
-            // Nombre, datos y favorito (corazón)
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
@@ -142,7 +139,6 @@ fun PerfilMascotaScreen(
 
             Spacer(Modifier.height(16.dp))
 
-            // Tarjetas de datos: peso actual y alergias
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Card(
                     modifier = Modifier.weight(1f),
@@ -187,7 +183,6 @@ fun PerfilMascotaScreen(
 
             Spacer(Modifier.height(12.dp))
 
-            // Acerca de
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = MaterialTheme.shapes.medium,
@@ -224,7 +219,7 @@ fun PerfilMascotaScreen(
                     )
                 }
                 OutlinedButton(
-                    onClick = { context.avisoProximamente() },   // tabla CUIDADO (siguiente revisión)
+                    onClick = { context.avisoProximamente() },
                     modifier = Modifier.weight(1f).height(48.dp),
                     shape = MaterialTheme.shapes.medium,
                     border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary)
@@ -238,7 +233,7 @@ fun PerfilMascotaScreen(
             }
             Spacer(Modifier.height(12.dp))
             Button(
-                onClick = { context.avisoProximamente() },       // tabla CUIDADO (siguiente revisión)
+                onClick = { context.avisoProximamente() },
                 modifier = Modifier.fillMaxWidth().height(52.dp),
                 shape = MaterialTheme.shapes.medium
             ) {

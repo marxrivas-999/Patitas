@@ -5,7 +5,6 @@ import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
-// Tabla USUARIO del modelo entidad-relación
 @Entity(
     tableName = "usuario",
     indices = [Index(value = ["nombre_usuario"], unique = true)]

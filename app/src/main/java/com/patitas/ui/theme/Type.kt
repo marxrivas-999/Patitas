@@ -8,16 +8,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.patitas.R
 
-// Textos, botones y etiquetas: Poppins (archivos en res/font).
 val Poppins = FontFamily(
     Font(R.font.poppins_regular, FontWeight.Normal),
     Font(R.font.poppins_medium, FontWeight.Medium),
     Font(R.font.poppins_bold, FontWeight.Bold)
 )
 
-// Títulos: la guía de estilo usa Baloo 2. Para usarla, copia baloo2_bold.ttf a res/font
-// y cambia la definición de abajo para que apunte a ese archivo (misma forma que Poppins).
-// Mientras tanto se usa Poppins Bold para que el proyecto compile sin archivos extra.
 val TitulosFont = FontFamily(
     Font(R.font.poppins_bold, FontWeight.Bold)
 )

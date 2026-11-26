@@ -19,9 +19,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DataBaseModule {
 
-    // Usuario de prueba que se crea la primera vez que se abre la aplicación.
-    //   Usuario: ana garcia      Contraseña: 12345678
-    // (el valor guardado es el hash SHA-256 de la contraseña)
     private val usuarioInicial = object : RoomDatabase.Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)

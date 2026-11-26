@@ -1,6 +1,7 @@
 package com.patitas.ui
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,6 +17,8 @@ import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.outlined.Visibility
 import androidx.compose.material.icons.outlined.VisibilityOff
 import androidx.compose.material3.Button
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -29,6 +32,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
@@ -41,7 +45,6 @@ import androidx.navigation.NavController
 import com.patitas.R
 import com.patitas.data.AppScreens
 
-// Crear cuenta: inserta una fila nueva en la tabla USUARIO (la contraseña se guarda como hash)
 @Composable
 fun RegistroScreen(
     navController: NavController,
@@ -54,6 +57,8 @@ fun RegistroScreen(
     var errorUsuario by rememberSaveable { mutableStateOf(false) }
     var errorContrasena by rememberSaveable { mutableStateOf(false) }
     var errorConfirmar by rememberSaveable { mutableStateOf(false) }
+    var acepta by rememberSaveable { mutableStateOf(false) }
+    var errorAcepta by rememberSaveable { mutableStateOf(false) }
     var mostrar by remember { mutableStateOf(false) }
     val usuarioYaExiste by viewModel.usuarioYaExiste.collectAsStateWithLifecycle()
 
@@ -142,6 +147,36 @@ fun RegistroScreen(
                 error = if (errorConfirmar) stringResource(R.string.registro_confirmar_error) else null
             )
 
+            Spacer(Modifier.height(14.dp))
+
+
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Checkbox(
+                    checked = acepta,
+                    onCheckedChange = { acepta = it; errorAcepta = false }
+                )
+                Text(
+                    text = stringResource(R.string.registro_acepto),
+                    modifier = Modifier.weight(1f),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onBackground
+                )
+            }
+            TextButton(onClick = { navController.navigate(AppScreens.Privacidad.route) }) {
+                Text(
+                    text = stringResource(R.string.registro_leer_aviso),
+                    style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            }
+            if (errorAcepta) {
+                Text(
+                    text = stringResource(R.string.registro_acepto_error),
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.error
+                )
+            }
+
             Spacer(Modifier.height(20.dp))
 
             Button(
@@ -149,7 +184,8 @@ fun RegistroScreen(
                     errorUsuario = usuario.isBlank()
                     errorContrasena = contrasena.length < 8
                     errorConfirmar = confirmar != contrasena
-                    if (!errorUsuario && !errorContrasena && !errorConfirmar) {
+                    errorAcepta = !acepta
+                    if (!errorUsuario && !errorContrasena && !errorConfirmar && acepta) {
                         viewModel.registrar(nombre.trim(), usuario.trim(), contrasena) {
                             // Cuenta creada y sesión iniciada: se entra directo a Inicio
                             navController.navigate(AppScreens.Inicio.route) {
@@ -172,7 +208,6 @@ fun RegistroScreen(
     }
 }
 
-// Campo de contraseña con botón para mostrar u ocultar (mismo estilo que el de Login)
 @Composable
 private fun CampoContrasena(
     etiqueta: String,

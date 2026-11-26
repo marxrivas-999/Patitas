@@ -23,7 +23,6 @@ class MascotaViewModel @Inject constructor(
     private val sesion: SesionUsuario
 ) : ViewModel() {
 
-    // Mascotas del usuario que tiene la sesión iniciada
     val mascotas: StateFlow<List<Mascota>> = sesion.idUsuario
         .flatMapLatest { id -> if (id == null) flowOf(emptyList()) else repository.obtenerMascotas(id) }
         .stateIn(
@@ -34,7 +33,6 @@ class MascotaViewModel @Inject constructor(
 
     fun obtenerMascota(id: Int): Flow<Mascota?> = repository.obtenerMascota(id)
 
-    // Si la mascota es nueva (id = 0) se inserta; si ya existe, se actualiza
     fun guardarMascota(mascota: Mascota) {
         val idUsuario = sesion.idUsuario.value ?: return
         viewModelScope.launch {

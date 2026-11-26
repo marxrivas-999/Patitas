@@ -31,14 +31,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.patitas.R
 
-// Lista de sensores del dispositivo (SensorManager), como en la Práctica 2.
-// Se llega desde Perfil. Más adelante estos sensores podrían usarse para los paseos de las mascotas.
 @Composable
 fun SensoresScreen(navController: NavController) {
     val context = LocalContext.current
 
-    // SensorManager: punto de entrada del framework de sensores.
-    // getSensorList(TYPE_ALL) devuelve todos los sensores del dispositivo.
     val listaSensores = remember {
         val manager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
         manager.getSensorList(Sensor.TYPE_ALL)

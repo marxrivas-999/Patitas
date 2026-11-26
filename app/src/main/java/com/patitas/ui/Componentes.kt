@@ -59,7 +59,6 @@ import java.time.format.DateTimeFormatter
 import java.util.Locale
 import java.util.UUID
 
-// ---------- Botón circular (flecha de regreso, campana, engrane, corazón) ----------
 @Composable
 fun BotonCircular(
     icono: ImageVector,
@@ -79,7 +78,6 @@ fun BotonCircular(
     }
 }
 
-// ---------- Barra de navegación inferior (Inicio, Mascotas, Historial, Perfil) ----------
 enum class DestinoBarra { Inicio, Mascotas, Historial, Perfil }
 
 @Composable
@@ -145,7 +143,6 @@ fun BarraInferior(
     }
 }
 
-// ---------- Campo de texto con etiqueta arriba (como en Figma) ----------
 @Composable
 fun CampoPatitas(
     etiqueta: String,
@@ -198,14 +195,13 @@ fun CampoPatitas(
                 )
             )
             if (onClick != null) {
-                // Capa transparente: el campo (fecha, raza) se comporta como un botón
+
                 Box(Modifier.matchParentSize().clickable(onClick = onClick))
             }
         }
     }
 }
 
-// ---------- Fotografías guardadas en el almacenamiento de la app ----------
 @Composable
 fun ImagenDesdeRuta(
     ruta: String,
@@ -231,7 +227,6 @@ fun ImagenDesdeRuta(
 
 private fun decodificar(ruta: String): ImageBitmap? = try {
     ImageDecoder.decodeBitmap(ImageDecoder.createSource(File(ruta))) { decoder, info, _ ->
-        // Reduce fotos muy grandes para ahorrar memoria
         var reduccion = 1
         while (info.size.width / reduccion > 1200) reduccion *= 2
         decoder.setTargetSampleSize(reduccion)
@@ -240,7 +235,7 @@ private fun decodificar(ruta: String): ImageBitmap? = try {
     null
 }
 
-// Copia la foto elegida a la carpeta privada de la app y regresa su ruta
+
 private fun guardarFoto(context: Context, uri: Uri): String? = try {
     val carpeta = File(context.filesDir, "fotos").apply { mkdirs() }
     val archivo = File(carpeta, "${UUID.randomUUID()}.jpg")
@@ -252,7 +247,6 @@ private fun guardarFoto(context: Context, uri: Uri): String? = try {
     null
 }
 
-// Devuelve una función que abre la galería; al elegir una foto llama a alElegir(ruta)
 @Composable
 fun rememberSelectorFoto(alElegir: (String) -> Unit): () -> Unit {
     val context = LocalContext.current
@@ -272,12 +266,11 @@ fun rememberSelectorFoto(alElegir: (String) -> Unit): () -> Unit {
     }
 }
 
-// ---------- Utilidades ----------
 fun Context.avisoProximamente() {
     Toast.makeText(this, getString(R.string.comun_proximamente), Toast.LENGTH_SHORT).show()
 }
 
-// Edad a partir de la fecha de nacimiento (aaaa-mm-dd); texto vacío si no hay fecha
+
 fun edadTexto(context: Context, fechaNacimiento: String): String {
     val nacimiento = runCatching { LocalDate.parse(fechaNacimiento) }.getOrNull() ?: return ""
     val periodo = Period.between(nacimiento, LocalDate.now())

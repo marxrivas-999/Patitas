@@ -23,9 +23,7 @@ interface UsuarioDao {
     @Query("SELECT * FROM usuario WHERE id_usuario = :id")
     fun getUsuario(id: Int): Flow<UsuarioEntity?>
 
-    // Relación 1 a N: el usuario con sus mascotas.
-    // @Transaction porque Room ejecuta más de una consulta (usuario y luego sus mascotas).
-    // Al ser Flow, la pantalla se actualiza sola cuando se agrega, edita o borra una mascota.
+
     @Transaction
     @Query("SELECT * FROM usuario WHERE id_usuario = :id")
     fun obtenerUsuarioConMascotas(id: Int): Flow<UsuarioConMascotasRelacion?>

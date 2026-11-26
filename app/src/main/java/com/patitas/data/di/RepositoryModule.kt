@@ -29,7 +29,6 @@ abstract class RepositoryModule {
         mascotaRepository: MascotaRepositoryImp
     ): MascotaRepository
 
-    // La interfaz RazaRepository se resuelve con RazaRepositoryImp (consume la API con Retrofit)
     @Binds
     @Singleton
     abstract fun bindRazaRepository(

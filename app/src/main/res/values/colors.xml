@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Solo para elementos fuera de Compose (ventana y ícono). La interfaz usa MaterialTheme. -->
+
     <color name="fondo_ventana">#F8F5FC</color>
     <color name="ic_launcher_background">#885CC7</color>
 </resources>

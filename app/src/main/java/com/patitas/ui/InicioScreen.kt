@@ -55,7 +55,6 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
-// Pantalla 3: Inicio
 @Composable
 fun InicioScreen(
     navController: NavController,
@@ -99,7 +98,7 @@ fun InicioScreen(
                     BotonCircular(
                         icono = Icons.Outlined.Notifications,
                         descripcion = stringResource(R.string.inicio_notificaciones),
-                        onClick = { context.avisoProximamente() }   // tabla NOTIFICACION (siguiente revisión)
+                        onClick = { context.avisoProximamente() }
                     )
                     Text(
                         text = stringResource(R.string.inicio_notificaciones),
@@ -111,7 +110,6 @@ fun InicioScreen(
 
             Spacer(Modifier.height(20.dp))
 
-            // Mis mascotas (datos de la tabla MASCOTA)
             Text(
                 text = stringResource(R.string.inicio_mis_mascotas),
                 style = MaterialTheme.typography.titleLarge,
@@ -158,7 +156,6 @@ fun InicioScreen(
                 )
             }
 
-            // Próximos cuidados: tarjeta de muestra, se conectará con la tabla CUIDADO
             if (mascotas.isNotEmpty()) {
                 Spacer(Modifier.height(24.dp))
                 Text(
@@ -221,7 +218,6 @@ fun InicioScreen(
 
             Spacer(Modifier.height(12.dp))
 
-            // Tarjeta de consejos
             Card(
                 modifier = Modifier.fillMaxWidth().clickable { context.avisoProximamente() },
                 shape = MaterialTheme.shapes.large,
@@ -256,7 +252,6 @@ fun InicioScreen(
     }
 }
 
-// Tarjeta de una mascota: foto, nombre, especie y edad, raza y enlace "Ver ficha"
 @Composable
 private fun TarjetaMascota(mascota: Mascota, onClick: () -> Unit) {
     val context = LocalContext.current

@@ -22,7 +22,7 @@ interface MascotaDao {
     @Query("SELECT * FROM mascota WHERE id_mascota = :id")
     fun getMascota(id: Int): Flow<MascotaEntity?>
 
-    // Las favoritas aparecen primero
+
     @Query(
         "SELECT * FROM mascota WHERE id_usuario = :idUsuario " +
             "ORDER BY es_favorita DESC, nombre ASC"

@@ -6,7 +6,6 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
-// Tabla MASCOTA del modelo entidad-relación (un USUARIO tiene muchas MASCOTAS)
 @Entity(
     tableName = "mascota",
     foreignKeys = [

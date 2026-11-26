@@ -1,6 +1,5 @@
 package com.patitas.data
 
-// Rutas de las pantallas de la aplicación
 sealed class AppScreens(val route: String) {
     object Bienvenida : AppScreens("Bienvenida")
     object Login : AppScreens("Login")
@@ -9,8 +8,8 @@ sealed class AppScreens(val route: String) {
     object Perfil : AppScreens("Perfil")
     object Sensores : AppScreens("Sensores")
     object Relaciones : AppScreens("Relaciones")
+    object Privacidad : AppScreens("Privacidad")
 
-    // id = 0 -> agregar mascota nueva; id > 0 -> editar ficha de esa mascota
     object FormMascota : AppScreens("FormMascota/{id}") {
         fun conId(id: Int) = "FormMascota/$id"
     }

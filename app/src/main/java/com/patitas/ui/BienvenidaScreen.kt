@@ -37,7 +37,6 @@ import com.patitas.R
 import com.patitas.data.AppScreens
 import com.patitas.ui.theme.PatitasTheme
 
-// Pantalla 1: Bienvenida
 @Composable
 fun BienvenidaScreen(navController: NavController) {
     Scaffold(containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.55f)) { innerPadding ->
@@ -52,7 +51,6 @@ fun BienvenidaScreen(navController: NavController) {
         ) {
             LogoPatitas()
             Spacer(Modifier.height(20.dp))
-            // Ilustración dentro de un contenedor redondeado, como en Figma
             Image(
                 painter = painterResource(R.drawable.ilustracion_mascotas),
                 contentDescription = stringResource(R.string.bienvenida_ilustracion),
@@ -103,7 +101,24 @@ fun BienvenidaScreen(navController: NavController) {
                     style = MaterialTheme.typography.labelLarge
                 )
             }
-            Spacer(Modifier.height(14.dp))
+            Spacer(Modifier.height(10.dp))
+            // Aviso de privacidad visible desde la primera pantalla
+            Text(
+                text = stringResource(R.string.bienvenida_aceptas),
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center
+            )
+            androidx.compose.material3.TextButton(
+                onClick = { navController.navigate(route = AppScreens.Privacidad.route) }
+            ) {
+                Text(
+                    text = stringResource(R.string.registro_leer_aviso),
+                    style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            }
+            Spacer(Modifier.height(4.dp))
             Text(
                 text = stringResource(R.string.bienvenida_pie),
                 style = MaterialTheme.typography.labelMedium,

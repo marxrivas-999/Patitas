@@ -8,7 +8,6 @@ import com.patitas.data.database.dao.UsuarioDao
 import com.patitas.data.database.entity.MascotaEntity
 import com.patitas.data.database.entity.UsuarioEntity
 
-// Tablas implementadas: USUARIO y MASCOTA (las demás se agregarán en las siguientes revisiones)
 @Database(
     entities = [UsuarioEntity::class, MascotaEntity::class],
     version = 1,

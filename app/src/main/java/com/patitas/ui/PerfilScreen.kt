@@ -21,6 +21,7 @@ import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.automirrored.outlined.HelpOutline
 import androidx.compose.material.icons.automirrored.outlined.Logout
 import androidx.compose.material.icons.outlined.Link
+import androidx.compose.material.icons.outlined.Lock
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.outlined.Pets
@@ -50,7 +51,6 @@ import androidx.navigation.NavController
 import com.patitas.R
 import com.patitas.data.AppScreens
 
-// Pantalla 8: Perfil y configuración (datos de la tabla USUARIO)
 @Composable
 fun PerfilScreen(
     navController: NavController,
@@ -60,7 +60,6 @@ fun PerfilScreen(
     val usuarioConMascotas by viewModel.usuarioConMascotas.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
-    // Resumen de la relación 1 a N (USUARIO -> MASCOTA): "3 mascotas · 1 favorita"
     val resumenMascotas = usuarioConMascotas?.let { datos ->
         val total = datos.mascotas.size
         val favoritas = datos.mascotas.count { it.esFavorita }
@@ -86,7 +85,6 @@ fun PerfilScreen(
                 .padding(horizontal = 20.dp, vertical = 16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Título y engrane
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
@@ -106,7 +104,6 @@ fun PerfilScreen(
 
             Spacer(Modifier.height(16.dp))
 
-            // Fotografía de perfil (toca para cambiarla) y nombre
             val u = usuario
             ImagenDesdeRuta(
                 ruta = u?.foto ?: "",
@@ -134,7 +131,6 @@ fun PerfilScreen(
 
             Spacer(Modifier.height(20.dp))
 
-            // Lista de opciones
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = MaterialTheme.shapes.large,
@@ -163,6 +159,9 @@ fun PerfilScreen(
                     OpcionPerfil(Icons.Outlined.Sensors, stringResource(R.string.perfil_sensores)) {
                         navController.navigate(AppScreens.Sensores.route)
                     }
+                    OpcionPerfil(Icons.Outlined.Lock, stringResource(R.string.perfil_privacidad)) {
+                        navController.navigate(AppScreens.Privacidad.route)
+                    }
                     OpcionPerfil(Icons.AutoMirrored.Outlined.HelpOutline, stringResource(R.string.perfil_ayuda)) {
                         context.avisoProximamente()
                     }
@@ -171,7 +170,6 @@ fun PerfilScreen(
 
             Spacer(Modifier.height(16.dp))
 
-            // Configuración: interruptor de notificaciones (campo recibir_notificaciones)
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = MaterialTheme.shapes.large,
@@ -212,7 +210,6 @@ fun PerfilScreen(
 
             Spacer(Modifier.height(16.dp))
 
-            // Cerrar sesión
             Row(
                 modifier = Modifier
                     .fillMaxWidth()

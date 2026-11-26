@@ -11,14 +11,13 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-// 1. Estado de la UI (igual que UserUiState de la Práctica 2)
 data class RazasUiState(
     val isLoading: Boolean = false,
     val razas: List<String> = emptyList(),
-    val hayError: Boolean = false      // el texto del error está en strings.xml, no se guarda aquí
+    val hayError: Boolean = false
 )
 
-// 2. Eventos de la UI (flujo ascendente)
+
 sealed interface RazasUiEvent {
     data object Recargar : RazasUiEvent
 }
@@ -42,7 +41,7 @@ class RazasViewModel @Inject constructor(
     }
 
     private fun cargarRazas() {
-        if (_uiState.value.isLoading) return   // evita pedir lo mismo dos veces a la vez
+        if (_uiState.value.isLoading) return
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, hayError = false) }
             repository.obtenerRazasPerro().fold(

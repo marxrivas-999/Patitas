@@ -20,6 +20,7 @@
     <string name="bienvenida_lema">El cuidado de tus mascotas en un solo lugar</string>
     <string name="bienvenida_texto">Sus cuidados, sus momentos y todo el amor que les das. Siempre contigo.</string>
     <string name="bienvenida_continuar">Continuar</string>
+    <string name="bienvenida_aceptas">Al continuar, aceptas nuestro aviso de privacidad.</string>
     <string name="bienvenida_pie">Pequeñas huellas. Grandes vínculos.</string>
 
     <!-- Pantalla 2 · Inicio de sesión -->
@@ -142,6 +143,46 @@
         <item quantity="other">%d favoritas</item>
     </plurals>
     <string name="perfil_pie">Huellitas · Cuidamos lo que más quieres.</string>
+
+    <!-- Aviso de privacidad -->
+    <string name="perfil_privacidad">Aviso de privacidad</string>
+    <string name="privacidad_titulo">Aviso de privacidad</string>
+    <string name="privacidad_actualizacion">Última actualización: 25 de noviembre de 2026</string>
+    <string name="privacidad_intro">En Patitas nos importa tu privacidad. Aquí te explicamos, de forma sencilla, qué datos usa la app, para qué y cómo puedes controlarlos.</string>
+
+    <string name="priv_t1">1. Responsable</string>
+    <string name="priv_b1">Patitas es una aplicación desarrollada como proyecto académico. El responsable del tratamiento de tus datos personales es el equipo desarrollador de Patitas.\n\n[Agrega aquí el correo y el domicilio de contacto del equipo]</string>
+
+    <string name="priv_t2">2. Datos que recabamos</string>
+    <string name="priv_b2">De tu cuenta: tu nombre, tu nombre de usuario, tu contraseña (se guarda cifrada, nunca en un texto legible), tu foto de perfil si decides agregarla y tu preferencia de notificaciones.\n\nDe tus mascotas: nombre, especie, raza, fecha de nacimiento, peso, foto, alergias y notas.\n\nNo pedimos datos financieros, de ubicación ni datos personales sensibles. Evita escribir información personal tuya o de otras personas en las notas de tus mascotas.</string>
+
+    <string name="priv_t3">3. Para qué usamos tus datos</string>
+    <string name="priv_b3">Finalidades necesarias: crear y mantener tu cuenta, permitirte iniciar sesión y mostrar y administrar la ficha de tus mascotas.\n\nTu preferencia de notificaciones se guarda para decidir si te mostramos recordatorios de paseos, citas y próximos cuidados.\n\nNo usamos tus datos para publicidad, perfiles de consumo ni análisis.</string>
+
+    <string name="priv_t4">4. Dónde se guardan</string>
+    <string name="priv_b4">Tus datos se guardan únicamente en tu dispositivo, en una base de datos local. Patitas no tiene servidor propio y no envía tu información a la nube. Las fotos que eliges se copian al almacenamiento privado de la app.\n\nSi tienes activada la copia de seguridad de Android, el sistema puede respaldar los datos de la app en tu cuenta de Google. Esa función depende de tu dispositivo, no de Patitas.</string>
+
+    <string name="priv_t5">5. Internet y terceros</string>
+    <string name="priv_b5">Para sugerir razas de perro, la app consulta el servicio público Dog CEO (dog.ceo). En esa consulta no se envían tus datos personales ni los de tus mascotas. Como en cualquier conexión a internet, ese servicio puede ver la dirección IP de tu dispositivo.\n\nNo vendemos ni compartimos tus datos con terceros.</string>
+
+    <string name="priv_t6">6. Permisos y sensores</string>
+    <string name="priv_b6">Patitas solo solicita acceso a internet. Para elegir fotos usa el selector del sistema, que da acceso únicamente a la imagen que escoges.\n\nLa pantalla de sensores solo muestra la lista de sensores de tu dispositivo; no lee ni guarda sus mediciones.</string>
+
+    <string name="priv_t7">7. Tus derechos</string>
+    <string name="priv_b7">Tienes derecho a acceder, rectificar y cancelar tus datos, y a oponerte a su uso (derechos ARCO).\n\nDentro de la app puedes editar o eliminar la información de tus mascotas y cambiar tu foto de perfil. Al desinstalar Patitas se eliminan los datos guardados en tu dispositivo. Para cualquier otra solicitud, escríbenos al contacto indicado en la sección 1.</string>
+
+    <string name="priv_t8">8. Seguridad</string>
+    <string name="priv_b8">Guardamos tu contraseña como un código que no se puede leer y mantenemos tus datos en el almacenamiento privado de la app. Ningún método es totalmente seguro, por eso te recomendamos proteger tu dispositivo con un bloqueo de pantalla.</string>
+
+    <string name="priv_t9">9. Cambios a este aviso</string>
+    <string name="priv_b9">Si cambiamos este aviso, publicaremos la nueva versión en esta pantalla con su fecha de actualización. Si algún día usáramos tus datos para una finalidad distinta, te pediremos de nuevo tu consentimiento.</string>
+
+    <string name="priv_t10">10. Autoridad</string>
+    <string name="priv_b10">Si consideras que tus derechos fueron vulnerados, puedes acudir a la Secretaría Anticorrupción y Buen Gobierno, autoridad en materia de protección de datos personales en posesión de particulares, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.</string>
+
+    <string name="registro_acepto">He leído y acepto el aviso de privacidad.</string>
+    <string name="registro_leer_aviso">Leer el aviso de privacidad</string>
+    <string name="registro_acepto_error">Debes aceptar el aviso de privacidad para crear tu cuenta</string>
 
     <!-- Relaciones en Room -->
     <string name="relaciones_titulo">Relaciones en Room</string>

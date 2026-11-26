@@ -15,6 +15,9 @@ siguiendo el tutorial BD-room y el diseño de Figma.
   1 a N (cada usuario con sus mascotas) y N a 1 (cada mascota con su dueño). Usa `RelacionesDao`, `RelacionesRepository` y `RelacionesViewModel`.
 - **Crear cuenta** (`ui/RegistroScreen`, enlace en el Login): inserta en USUARIO con la contraseña en hash SHA-256,
   valida usuario único y mínimo 8 caracteres, e inicia sesión al terminar.
+- **Aviso de privacidad** (`ui/PrivacidadScreen`, textos en `strings.xml`, prefijo `priv_`): se abre desde Perfil y desde
+  "Crear cuenta", donde hay que aceptarlo con una casilla. Antes de entregar, reemplaza el contacto de la sección 1
+  (`priv_b1`) y revisa que el contenido siga coincidiendo con lo que hace la app.
 - **Consumo de API con Retrofit** (https://dog.ceo/api/breeds/list/all): `data/network/` (`RazaApiService`, `dto/RazasPerroDto`),
   `data/di/NetworkModule`, `RazaRepository` / `RazaRepositoryImp` y `ui/RazasViewModel` (patrón UiState + UiEvent).
   Alimenta el desplegable "Raza" del formulario cuando la especie es Perro; sin internet usa la lista local.

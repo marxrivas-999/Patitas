@@ -24,7 +24,6 @@ class UsuarioViewModel @Inject constructor(
     private val sesion: SesionUsuario
 ) : ViewModel() {
 
-    // Usuario que tiene la sesión iniciada (null si no hay sesión)
     val usuario: StateFlow<Usuario?> = sesion.idUsuario
         .flatMapLatest { id -> if (id == null) flowOf(null) else repository.obtenerUsuario(id) }
         .stateIn(
@@ -33,7 +32,6 @@ class UsuarioViewModel @Inject constructor(
             initialValue = null
         )
 
-    // Relación 1 a N: el usuario con sus mascotas (para mostrar cuántas tiene en el perfil)
     val usuarioConMascotas: StateFlow<UsuarioConMascotas?> = sesion.idUsuario
         .flatMapLatest { id -> if (id == null) flowOf(null) else repository.obtenerUsuarioConMascotas(id) }
         .stateIn(
@@ -60,7 +58,6 @@ class UsuarioViewModel @Inject constructor(
 
     fun limpiarError() { _errorLogin.value = false }
 
-    // true cuando el nombre de usuario elegido al crear la cuenta ya existe
     private val _usuarioYaExiste = MutableStateFlow(false)
     val usuarioYaExiste: StateFlow<Boolean> = _usuarioYaExiste
 
@@ -71,7 +68,7 @@ class UsuarioViewModel @Inject constructor(
             val nuevo = repository.registrar(nombre, nombreUsuario, contrasena)
             if (nuevo != null) {
                 _usuarioYaExiste.value = false
-                sesion.iniciar(nuevo.idUsuario)   // al crear la cuenta se inicia sesión
+                sesion.iniciar(nuevo.idUsuario)
                 alEntrar()
             } else {
                 _usuarioYaExiste.value = true

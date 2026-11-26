@@ -24,8 +24,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.patitas.R
 
-// Aviso de privacidad: se abre desde Perfil y desde "Crear cuenta".
-// Cada sección es un par (título, texto) definido en strings.xml.
 private val secciones = listOf(
     R.string.priv_t1 to R.string.priv_b1,
     R.string.priv_t2 to R.string.priv_b2,

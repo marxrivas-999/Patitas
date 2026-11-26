@@ -67,7 +67,6 @@ import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneOffset
 
-// Pantalla 4: Agregar mascota (con idMascota > 0 se usa para editar la ficha)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FormMascotaScreen(
@@ -77,7 +76,7 @@ fun FormMascotaScreen(
     razasViewModel: RazasViewModel = hiltViewModel()
 ) {
     val editando = idMascota != 0
-    // Razas de perro que llegan de la API (Retrofit); si falla se usa la lista local
+
     val estadoRazas by razasViewModel.uiState.collectAsStateWithLifecycle()
     val existente by remember(idMascota) { viewModel.obtenerMascota(idMascota) }
         .collectAsStateWithLifecycle(initialValue = null)
@@ -93,7 +92,7 @@ fun FormMascotaScreen(
     var nombre by rememberSaveable { mutableStateOf("") }
     var especie by rememberSaveable { mutableStateOf(especies[0]) }
     var raza by rememberSaveable { mutableStateOf("") }
-    var fecha by rememberSaveable { mutableStateOf("") }          // aaaa-mm-dd
+    var fecha by rememberSaveable { mutableStateOf("") }
     var peso by rememberSaveable { mutableStateOf("") }
     var alergias by rememberSaveable { mutableStateOf("") }
     var notas by rememberSaveable { mutableStateOf("") }
@@ -103,7 +102,7 @@ fun FormMascotaScreen(
     var mostrarFecha by remember { mutableStateOf(false) }
     var mostrarEliminar by remember { mutableStateOf(false) }
 
-    // Al editar, se llenan los campos con los datos guardados (una sola vez)
+
     LaunchedEffect(existente) {
         val m = existente
         if (m != null && !cargado) {
@@ -123,7 +122,7 @@ fun FormMascotaScreen(
 
     val razasPerroLocales = stringArrayResource(R.array.razas_perro)
     val razas = when (especie) {
-        // Perro: las razas locales primero y después las que trae la API (sin repetir)
+
         especies[0] -> remember(estadoRazas.razas) {
             combinarRazas(razasPerroLocales.toList(), estadoRazas.razas)
         }
@@ -139,7 +138,7 @@ fun FormMascotaScreen(
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 20.dp, vertical = 12.dp)
         ) {
-            // Flecha de regreso y nombre de la app
+
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
@@ -174,7 +173,6 @@ fun FormMascotaScreen(
 
             Spacer(Modifier.height(16.dp))
 
-            // Botón circular para subir la foto
             Card(
                 modifier = Modifier.fillMaxWidth().clickable(onClick = abrirGaleria),
                 shape = MaterialTheme.shapes.large,
@@ -232,7 +230,6 @@ fun FormMascotaScreen(
 
             Spacer(Modifier.height(14.dp))
 
-            // Chips de selección: especie
             Text(
                 text = stringResource(R.string.form_especie),
                 style = MaterialTheme.typography.labelLarge,
@@ -246,7 +243,7 @@ fun FormMascotaScreen(
                         onClick = {
                             if (especie != opcion) {
                                 especie = opcion
-                                raza = ""      // las razas dependen de la especie
+                                raza = ""
                             }
                         },
                         label = { Text(opcion, style = MaterialTheme.typography.labelMedium) },
@@ -264,7 +261,6 @@ fun FormMascotaScreen(
 
             Spacer(Modifier.height(14.dp))
 
-            // Selector desplegable: raza
             Box {
                 CampoPatitas(
                     etiqueta = stringResource(R.string.form_raza),
@@ -276,7 +272,7 @@ fun FormMascotaScreen(
                     onClick = { menuRaza = true }
                 )
                 DropdownMenu(expanded = menuRaza, onDismissRequest = { menuRaza = false }) {
-                    // Estado de la consulta a la API (solo aplica a perros)
+
                     if (especie == especies[0]) {
                         when {
                             estadoRazas.isLoading -> DropdownMenuItem(
@@ -304,7 +300,6 @@ fun FormMascotaScreen(
 
             Spacer(Modifier.height(14.dp))
 
-            // Selector de fecha: fecha de nacimiento
             CampoPatitas(
                 etiqueta = stringResource(R.string.form_fecha),
                 valor = fechaParaMostrar(fecha),
@@ -317,7 +312,6 @@ fun FormMascotaScreen(
 
             Spacer(Modifier.height(14.dp))
 
-            // Campo numérico: peso
             CampoPatitas(
                 etiqueta = stringResource(R.string.form_peso),
                 valor = peso,
@@ -331,7 +325,6 @@ fun FormMascotaScreen(
                 error = if (errorPeso) stringResource(R.string.form_peso_error) else null
             )
 
-            // Al editar la ficha también se capturan las alergias y la sección "Acerca de"
             if (editando) {
                 Spacer(Modifier.height(14.dp))
                 CampoPatitas(
@@ -419,7 +412,6 @@ fun FormMascotaScreen(
         }
     }
 
-    // Calendario para elegir la fecha de nacimiento (no permite fechas futuras)
     if (mostrarFecha) {
         val milisIniciales = runCatching {
             LocalDate.parse(fecha).atStartOfDay(ZoneOffset.UTC).toInstant().toEpochMilli()
@@ -451,7 +443,6 @@ fun FormMascotaScreen(
         }
     }
 
-    // Confirmación antes de eliminar (prevención de errores)
     if (mostrarEliminar) {
         AlertDialog(
             onDismissRequest = { mostrarEliminar = false },
@@ -478,7 +469,6 @@ fun FormMascotaScreen(
     }
 }
 
-// Une las razas locales (en español) con las de la API sin repetir nombres (sin distinguir mayúsculas)
 private fun combinarRazas(locales: List<String>, remotas: List<String>): List<String> {
     val conocidas = locales.map { it.lowercase() }.toSet()
     val extra = remotas.filter { it.lowercase() !in conocidas }

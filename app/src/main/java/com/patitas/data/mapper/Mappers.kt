@@ -56,7 +56,6 @@ fun Mascota.toEntity(): MascotaEntity = MascotaEntity(
     esFavorita = esFavorita
 )
 
-// Relación 1 a N: las favoritas salen primero y luego por nombre (igual que en la pantalla Inicio)
 fun UsuarioConMascotasRelacion.toDomain(): UsuarioConMascotas = UsuarioConMascotas(
     usuario = usuario.toDomain(),
     mascotas = mascotas
@@ -64,13 +63,11 @@ fun UsuarioConMascotasRelacion.toDomain(): UsuarioConMascotas = UsuarioConMascot
         .sortedWith(compareByDescending<Mascota> { it.esFavorita }.thenBy { it.nombre })
 )
 
-// Relación N a 1: la mascota con su dueño
 fun MascotaConUsuarioRelacion.toDomain(): MascotaConUsuario = MascotaConUsuario(
     mascota = mascota.toDomain(),
     usuario = usuario.toDomain()
 )
 
-// API de razas: "bulldog" con subrazas ["boston", "french"] -> "Boston bulldog", "French bulldog"
 fun RazasPerroDto.toDomain(): List<String> =
     message
         .flatMap { (raza, subrazas) ->
