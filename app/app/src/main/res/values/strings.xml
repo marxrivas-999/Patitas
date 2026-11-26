@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Patitas</string>
+
+    <!-- Comunes -->
+    <string name="comun_volver">Volver</string>
+    <string name="comun_cancelar">Cancelar</string>
+    <string name="comun_aceptar">Aceptar</string>
+    <string name="comun_proximamente">Esta función estará disponible próximamente</string>
+
+    <!-- Barra de navegación inferior -->
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_mascotas">Mascotas</string>
+    <string name="nav_historial">Historial</string>
+    <string name="nav_perfil">Perfil</string>
+
+    <!-- Pantalla 1 · Bienvenida -->
+    <string name="bienvenida_ilustracion">Ilustración de un perro y un gato</string>
+    <string name="bienvenida_kicker">CERCA DE TI, CERCA DE ELLOS</string>
+    <string name="bienvenida_lema">El cuidado de tus mascotas en un solo lugar</string>
+    <string name="bienvenida_texto">Sus cuidados, sus momentos y todo el amor que les das. Siempre contigo.</string>
+    <string name="bienvenida_continuar">Continuar</string>
+    <string name="bienvenida_pie">Pequeñas huellas. Grandes vínculos.</string>
+
+    <!-- Pantalla 2 · Inicio de sesión -->
+    <string name="login_volver">Volver</string>
+    <string name="login_titulo">¡Qué gusto verte!</string>
+    <string name="login_subtitulo">Entra y sigue cuidando de quienes te alegran cada día.</string>
+    <string name="login_usuario">Nombre de usuario</string>
+    <string name="login_usuario_hint">Escribe tu usuario</string>
+    <string name="login_contrasena">Contraseña</string>
+    <string name="login_contrasena_hint">Escribe tu contraseña</string>
+    <string name="login_mostrar">Mostrar contraseña</string>
+    <string name="login_ocultar">Ocultar contraseña</string>
+    <string name="login_boton">Iniciar sesión</string>
+    <string name="login_crear_cuenta">¿No tienes cuenta? Crear cuenta</string>
+    <string name="login_error">Usuario o contraseña incorrectos</string>
+    <string name="login_info_titulo">Un espacio para cuidar mejor</string>
+    <string name="login_info">La información de tus mascotas, organizada y siempre a mano.</string>
+    <string name="login_confianza">Tu vínculo con ellos empieza con cuidado.</string>
+
+    <!-- Crear cuenta -->
+    <string name="registro_titulo">Crea tu cuenta</string>
+    <string name="registro_subtitulo">Solo toma un momento y ya podrás registrar a tus mascotas.</string>
+    <string name="registro_nombre">Tu nombre (opcional)</string>
+    <string name="registro_nombre_hint">¿Cómo te llamamos?</string>
+    <string name="registro_usuario_error">Escribe un nombre de usuario</string>
+    <string name="registro_usuario_existe">Ese nombre de usuario ya está en uso</string>
+    <string name="registro_contrasena_error">Usa al menos 8 caracteres</string>
+    <string name="registro_confirmar">Confirmar contraseña</string>
+    <string name="registro_confirmar_hint">Repite tu contraseña</string>
+    <string name="registro_confirmar_error">Las contraseñas no coinciden</string>
+    <string name="registro_boton">Crear cuenta</string>
+
+    <!-- Pantalla 3 · Inicio -->
+    <string name="inicio_saludo">¡Hola! ¿Cómo están hoy?</string>
+    <string name="inicio_notificaciones">Notificaciones</string>
+    <string name="inicio_mis_mascotas">Mis mascotas</string>
+    <string name="inicio_sin_mascotas">Aún no tienes mascotas registradas. ¡Agrega a tu primer compañero!</string>
+    <string name="inicio_ver_ficha">Ver ficha</string>
+    <string name="inicio_agregar_mascota">+ Agregar mascota</string>
+    <string name="inicio_proximos">Próximos cuidados</string>
+    <string name="inicio_cuidado_titulo">Vacuna anual</string>
+    <string name="inicio_cuidado_detalle">22 oct · 10:00 · %1$s</string>
+    <string name="inicio_cuidado_texto">Refuerzo de vacuna polivalente.</string>
+    <string name="estado_pendiente">Pendiente</string>
+    <string name="inicio_registrar_cuidado">Registrar cuidado</string>
+    <string name="inicio_ver_historial">Ver historial</string>
+    <string name="inicio_consejos_titulo">Consejos para tu mascota</string>
+    <string name="inicio_consejos_texto">Ideas para su bienestar</string>
+
+    <!-- Pantalla 4 · Agregar / editar mascota -->
+    <string name="form_titulo_agregar">Agregar mascota</string>
+    <string name="form_titulo_editar">Editar ficha</string>
+    <string name="form_subtitulo">Conozcamos a tu compañero de vida.</string>
+    <string name="form_subir_foto">Subir foto</string>
+    <string name="form_cambiar_foto">Cambiar foto</string>
+    <string name="form_foto_texto">Una foto de su mejor sonrisa.</string>
+    <string name="form_foto_descripcion">Fotografía de la mascota</string>
+    <string name="form_nombre">Nombre</string>
+    <string name="form_nombre_hint">¿Cómo se llama?</string>
+    <string name="form_nombre_error">Escribe el nombre de tu mascota</string>
+    <string name="form_especie">Especie</string>
+    <string name="especie_perro">Perro</string>
+    <string name="especie_gato">Gato</string>
+    <string name="especie_otro">Otro</string>
+    <string name="form_raza">Raza</string>
+    <string name="form_raza_hint">Seleccionar raza</string>
+    <string name="form_fecha">Fecha de nacimiento</string>
+    <string name="form_fecha_hint">dd / mm / aaaa</string>
+    <string name="form_peso">Peso (kg)</string>
+    <string name="form_peso_hint">Ej. 12,4</string>
+    <string name="form_peso_error">Escribe un peso válido, por ejemplo 12,4</string>
+    <string name="form_alergias">Alergias</string>
+    <string name="form_alergias_hint">Ninguna conocida</string>
+    <string name="form_notas">Acerca de</string>
+    <string name="form_notas_hint">Cuéntanos cómo es tu mascota</string>
+    <string name="form_nota_pie">Podrás actualizar estos datos cuando quieras.</string>
+    <string name="form_guardar">Guardar mascota</string>
+    <string name="form_guardar_cambios">Guardar cambios</string>
+    <string name="form_eliminar">Eliminar mascota</string>
+    <string name="form_eliminar_titulo">¿Eliminar a %1$s?</string>
+    <string name="form_razas_cargando">Cargando razas…</string>
+    <string name="form_razas_reintentar">Sin conexión · Toca para reintentar</string>
+    <string name="form_eliminar_texto">Se borrará su ficha. Esta acción no se puede deshacer.</string>
+
+    <!-- Pantalla 5 · Perfil de mascota -->
+    <string name="ficha_companero">Mi compañero de vida</string>
+    <string name="ficha_favorita">Marcar como favorita</string>
+    <string name="ficha_peso">PESO ACTUAL</string>
+    <string name="ficha_alergias">ALERGIAS</string>
+    <string name="ficha_sin_alergias">Ninguna conocida</string>
+    <string name="ficha_sin_dato">—</string>
+    <string name="ficha_peso_valor">%1$s kg</string>
+    <string name="ficha_acerca">Así es %1$s</string>
+    <string name="ficha_sin_notas">Aún no hay notas. Pulsa Editar ficha para agregarlas.</string>
+    <string name="ficha_editar">Editar ficha</string>
+    <string name="ficha_historial">Ver historial</string>
+    <string name="ficha_registrar">Registrar cuidado</string>
+
+    <!-- Pantalla 8 · Perfil y configuración -->
+    <string name="perfil_titulo">Mi perfil</string>
+    <string name="perfil_configuracion_boton">Configuración</string>
+    <string name="perfil_foto_descripcion">Fotografía de perfil</string>
+    <string name="perfil_mis_mascotas">Mis mascotas</string>
+    <string name="perfil_notificaciones">Notificaciones</string>
+    <string name="perfil_configuracion">Configuración</string>
+    <string name="perfil_ayuda">Ayuda</string>
+    <string name="perfil_seccion_config">CONFIGURACIÓN</string>
+    <string name="perfil_recibir">Recibir notificaciones</string>
+    <string name="perfil_recibir_texto">Paseos, citas y próximos cuidados.</string>
+    <string name="perfil_cerrar_sesion">Cerrar sesión</string>
+    <string name="perfil_relaciones">Relaciones en Room</string>
+    <string name="perfil_sensores">Sensores del dispositivo</string>
+    <string name="perfil_mascotas_resumen">%1$s · %2$s</string>
+    <plurals name="perfil_total_mascotas">
+        <item quantity="one">%d mascota</item>
+        <item quantity="other">%d mascotas</item>
+    </plurals>
+    <plurals name="perfil_total_favoritas">
+        <item quantity="one">%d favorita</item>
+        <item quantity="other">%d favoritas</item>
+    </plurals>
+    <string name="perfil_pie">Huellitas · Cuidamos lo que más quieres.</string>
+
+    <!-- Aviso de privacidad -->
+    <string name="perfil_privacidad">Aviso de privacidad</string>
+    <string name="privacidad_titulo">Aviso de privacidad</string>
+    <string name="privacidad_actualizacion">Última actualización: 25 de noviembre de 2026</string>
+    <string name="privacidad_intro">En Patitas nos importa tu privacidad. Aquí te explicamos, de forma sencilla, qué datos usa la app, para qué y cómo puedes controlarlos.</string>
+
+    <string name="priv_t1">1. Responsable</string>
+    <string name="priv_b1">Patitas es una aplicación desarrollada como proyecto académico. El responsable del tratamiento de tus datos personales es el equipo desarrollador de Patitas.\n\n[Agrega aquí el correo y el domicilio de contacto del equipo]</string>
+
+    <string name="priv_t2">2. Datos que recabamos</string>
+    <string name="priv_b2">De tu cuenta: tu nombre, tu nombre de usuario, tu contraseña (se guarda cifrada, nunca en un texto legible), tu foto de perfil si decides agregarla y tu preferencia de notificaciones.\n\nDe tus mascotas: nombre, especie, raza, fecha de nacimiento, peso, foto, alergias y notas.\n\nNo pedimos datos financieros, de ubicación ni datos personales sensibles. Evita escribir información personal tuya o de otras personas en las notas de tus mascotas.</string>
+
+    <string name="priv_t3">3. Para qué usamos tus datos</string>
+    <string name="priv_b3">Finalidades necesarias: crear y mantener tu cuenta, permitirte iniciar sesión y mostrar y administrar la ficha de tus mascotas.\n\nTu preferencia de notificaciones se guarda para decidir si te mostramos recordatorios de paseos, citas y próximos cuidados.\n\nNo usamos tus datos para publicidad, perfiles de consumo ni análisis.</string>
+
+    <string name="priv_t4">4. Dónde se guardan</string>
+    <string name="priv_b4">Tus datos se guardan únicamente en tu dispositivo, en una base de datos local. Patitas no tiene servidor propio y no envía tu información a la nube. Las fotos que eliges se copian al almacenamiento privado de la app.\n\nSi tienes activada la copia de seguridad de Android, el sistema puede respaldar los datos de la app en tu cuenta de Google. Esa función depende de tu dispositivo, no de Patitas.</string>
+
+    <string name="priv_t5">5. Internet y terceros</string>
+    <string name="priv_b5">Para sugerir razas de perro, la app consulta el servicio público Dog CEO (dog.ceo). En esa consulta no se envían tus datos personales ni los de tus mascotas. Como en cualquier conexión a internet, ese servicio puede ver la dirección IP de tu dispositivo.\n\nNo vendemos ni compartimos tus datos con terceros.</string>
+
+    <string name="priv_t6">6. Permisos y sensores</string>
+    <string name="priv_b6">Patitas solo solicita acceso a internet. Para elegir fotos usa el selector del sistema, que da acceso únicamente a la imagen que escoges.\n\nLa pantalla de sensores solo muestra la lista de sensores de tu dispositivo; no lee ni guarda sus mediciones.</string>
+
+    <string name="priv_t7">7. Tus derechos</string>
+    <string name="priv_b7">Tienes derecho a acceder, rectificar y cancelar tus datos, y a oponerte a su uso (derechos ARCO).\n\nDentro de la app puedes editar o eliminar la información de tus mascotas y cambiar tu foto de perfil. Al desinstalar Patitas se eliminan los datos guardados en tu dispositivo. Para cualquier otra solicitud, escríbenos al contacto indicado en la sección 1.</string>
+
+    <string name="priv_t8">8. Seguridad</string>
+    <string name="priv_b8">Guardamos tu contraseña como un código que no se puede leer y mantenemos tus datos en el almacenamiento privado de la app. Ningún método es totalmente seguro, por eso te recomendamos proteger tu dispositivo con un bloqueo de pantalla.</string>
+
+    <string name="priv_t9">9. Cambios a este aviso</string>
+    <string name="priv_b9">Si cambiamos este aviso, publicaremos la nueva versión en esta pantalla con su fecha de actualización. Si algún día usáramos tus datos para una finalidad distinta, te pediremos de nuevo tu consentimiento.</string>
+
+    <string name="priv_t10">10. Autoridad</string>
+    <string name="priv_b10">Si consideras que tus derechos fueron vulnerados, puedes acudir a la Secretaría Anticorrupción y Buen Gobierno, autoridad en materia de protección de datos personales en posesión de particulares, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.</string>
+
+    <string name="registro_acepto">He leído y acepto el aviso de privacidad.</string>
+    <string name="registro_leer_aviso">Leer el aviso de privacidad</string>
+    <string name="registro_acepto_error">Debes aceptar el aviso de privacidad para crear tu cuenta</string>
+
+    <!-- Relaciones en Room -->
+    <string name="relaciones_titulo">Relaciones en Room</string>
+    <string name="relaciones_subtitulo">Cómo se conectan las tablas USUARIO y MASCOTA.</string>
+    <string name="relaciones_uno_a_muchos">1) Uno a muchos: Usuario → Mascotas</string>
+    <string name="relaciones_muchos_a_uno">2) Muchos a uno: Mascota → Usuario</string>
+    <string name="relaciones_mascotas">Mascotas: %1$s</string>
+    <string name="relaciones_sin_mascotas">Sin mascotas</string>
+    <string name="relaciones_dueno">Dueño: %1$s</string>
+
+    <!-- Sensores del dispositivo -->
+    <string name="sensores_titulo">Sensores</string>
+    <string name="sensores_disponibles">Sensores disponibles (%1$d)</string>
+    <string name="sensores_fabricante">Fabricante: %1$s</string>
+    <string name="sensores_consumo">Consumo: %1$s mA</string>
+    <string name="sensores_vacio">Este dispositivo no reporta sensores.</string>
+
+    <!-- Edad -->
+    <plurals name="edad_anios">
+        <item quantity="one">%d año</item>
+        <item quantity="other">%d años</item>
+    </plurals>
+    <plurals name="edad_meses">
+        <item quantity="one">%d mes</item>
+        <item quantity="other">%d meses</item>
+    </plurals>
+    <string name="edad_recien">Recién nacido</string>
+
+    <!-- Razas -->
+    <string-array name="razas_perro">
+        <item>Cocker spaniel</item>
+        <item>Labrador retriever</item>
+        <item>Golden retriever</item>
+        <item>Pastor alemán</item>
+        <item>Chihuahua</item>
+        <item>Poodle</item>
+        <item>Bulldog</item>
+        <item>Schnauzer</item>
+        <item>Mestizo</item>
+    </string-array>
+    <string-array name="razas_gato">
+        <item>Siamés</item>
+        <item>Persa</item>
+        <item>Maine coon</item>
+        <item>Angora</item>
+        <item>Bengalí</item>
+        <item>Mestizo</item>
+    </string-array>
+    <string-array name="razas_otro">
+        <item>Otra</item>
+    </string-array>
+</resources>
