@@ -17,7 +17,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
-    @Binds
+    @Binds //qué implementación usar para cada interfaz
     @Singleton
     abstract fun bindUsuarioRepository(
         usuarioRepository: UsuarioRepositoryImp
@@ -41,3 +41,8 @@ abstract class RepositoryModule {
         relacionesRepository: RelacionesRepositoryImp
     ): RelacionesRepository
 }
+
+
+//8:Una clase no crea los objetos que necesita; los recibe desde fuera
+// (normalmente por el constructor). Así el código está menos acoplado y
+// es más fácil de probar y cambiar. Hilt es la librería de Google que automatiza esto.

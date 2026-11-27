@@ -14,7 +14,12 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
-
+//12:•	@Database: la base de datos.
+//•	@Entity: una tabla.
+//•	@PrimaryKey, @ColumnInfo, @Index, @ForeignKey: definición de columnas y relaciones.
+//•	@Dao: interfaz de operaciones.
+//•	@Insert, @Update, @Delete, @Query: las operaciones.
+//•	@Transaction, @Embedded, @Relation: consultas con relaciones.
 @Module
 @InstallIn(SingletonComponent::class)
 object DataBaseModule {
@@ -30,7 +35,7 @@ object DataBaseModule {
             )
         }
     }
-
+//Se reutiliza la instancia
     @Singleton
     @Provides
     fun getInstance(@ApplicationContext context: Context): AppDatabase {

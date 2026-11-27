@@ -8,7 +8,7 @@ composeBom = "2026.02.01"
 navigationCompose = "2.8.9"
 room = "2.8.5"
 hilt = "2.59.2"
-# Red (mismas versiones que la Práctica 2)
+
 kotlinxSerialization = "1.6.0"
 retrofit = "2.9.0"
 retrofitSerializationConverter = "1.0.0"

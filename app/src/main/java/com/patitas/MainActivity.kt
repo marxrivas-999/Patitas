@@ -26,3 +26,14 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+//15: Le dice a Hilt que esa clase de Android puede recibir inyección de dependencias.
+// La puse en MainActivity, y gracias a eso puedo usar hiltViewModel() en mis pantallas.

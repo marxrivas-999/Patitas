@@ -9,7 +9,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 import javax.inject.Singleton
-
+//9: Es una capa intermedia entre los datos y la
+// lógica de la app. El ViewModel no sabe si los datos vienen de Room o de internet,
+// solo habla con el repositorio. Tengo una interfaz en domain y su implementación en data.
 @Singleton
 class MascotaRepositoryImp @Inject constructor(
     private val mascotaDao: MascotaDao

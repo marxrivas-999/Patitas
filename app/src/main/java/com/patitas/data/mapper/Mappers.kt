@@ -10,6 +10,7 @@ import com.patitas.domain.model.MascotaConUsuario
 import com.patitas.domain.model.Usuario
 import com.patitas.domain.model.UsuarioConMascotas
 
+//18: Una función que le agregas a una clase que ya existe sin modificarla ni heredarla.
 fun UsuarioEntity.toDomain(): Usuario = Usuario(
     idUsuario = idUsuario,
     nombreUsuario = nombreUsuario,

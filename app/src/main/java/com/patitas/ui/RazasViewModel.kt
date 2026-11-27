@@ -1,5 +1,7 @@
 package com.patitas.ui
-
+//11: Es una función que puede pausarse sin bloquear la pantalla, y solo se llama desde una
+// corrutina. La uso en operaciones lentas como guardar en la base de datos o llamar a la API.
+// Están en mis DAO, en los repositorios, y los ViewModels las llaman dentro de viewModelScope.launch.
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.patitas.domain.repository.RazaRepository
@@ -10,14 +12,14 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
+//(estado)
 data class RazasUiState(
     val isLoading: Boolean = false,
     val razas: List<String> = emptyList(),
     val hayError: Boolean = false
 )
 
-
+//(eventos)
 sealed interface RazasUiEvent {
     data object Recargar : RazasUiEvent
 }
@@ -42,6 +44,7 @@ class RazasViewModel @Inject constructor(
 
     private fun cargarRazas() {
         if (_uiState.value.isLoading) return
+
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, hayError = false) }
             repository.obtenerRazasPerro().fold(
@@ -55,3 +58,7 @@ class RazasViewModel @Inject constructor(
         }
     }
 }
+
+
+//6 y 10: UDF significa flujo de datos unidireccional. El estado baja del ViewModel a la pantalla
+//y los eventos suben de la pantalla al ViewModel. La pantalla nunca cambia el estado directamente.

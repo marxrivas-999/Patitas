@@ -17,6 +17,13 @@ import javax.inject.Singleton
 class UsuarioRepositoryImp @Inject constructor(
     private val usuarioDao: UsuarioDao
 ) : UsuarioRepository {
+    //11:Una función que puede pausarse y reanudarse sin bloquear el hilo principal.
+    // Sirve para tareas lentas (base de datos, internet) sin congelar la pantalla. Solo se
+    // puede llamar desde una corrutina o desde otra función suspend.
+    //DAO: suspend fun insertarMascota(...), actualizarMascota, eliminarMascota.
+    //	Repositorios: iniciarSesion, registrar, obtenerRazasPerro.
+    //	Retrofit: RazaApiService.
+    //	Los ViewModels las llaman dentro de viewModelScope.launch { } (la corrutina).
 
     override suspend fun iniciarSesion(nombreUsuario: String, contrasena: String): Usuario? {
         val usuario = usuarioDao.buscarPorNombreUsuario(nombreUsuario) ?: return null

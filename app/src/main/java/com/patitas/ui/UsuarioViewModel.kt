@@ -19,6 +19,7 @@ import javax.inject.Inject
 
 @OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
+//los repositorios reciben su DAO
 class UsuarioViewModel @Inject constructor(
     private val repository: UsuarioRepository,
     private val sesion: SesionUsuario

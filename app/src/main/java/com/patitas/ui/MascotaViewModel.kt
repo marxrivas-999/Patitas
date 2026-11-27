@@ -22,7 +22,11 @@ class MascotaViewModel @Inject constructor(
     private val repository: MascotaRepository,
     private val sesion: SesionUsuario
 ) : ViewModel() {
-
+//13: Clase de Jetpack que guarda y gestiona el estado de la pantalla y contiene
+    // la lógica de presentación. Sobrevive a cambios de configuración (como girar el teléfono)
+    // y no conoce los detalles de la interfaz. Usa viewModelScope para lanzar corrutinas.
+//En tu proyecto: En ui/: UsuarioViewModel, MascotaViewModel, RazasViewModel y RelacionesViewModel.
+    // Cada uno recibe un repositorio por constructor y expone StateFlow.
     val mascotas: StateFlow<List<Mascota>> = sesion.idUsuario
         .flatMapLatest { id -> if (id == null) flowOf(emptyList()) else repository.obtenerMascotas(id) }
         .stateIn(

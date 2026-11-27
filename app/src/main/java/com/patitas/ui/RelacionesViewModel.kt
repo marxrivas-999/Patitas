@@ -12,6 +12,7 @@ import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
 @HiltViewModel
+//los repositorios reciben su DAO
 class RelacionesViewModel @Inject constructor(
     repository: RelacionesRepository
 ) : ViewModel() {

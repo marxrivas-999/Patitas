@@ -53,3 +53,11 @@ fun AppNavegacion() {
         }
     }
 }
+
+//16: •	NavHost: contenedor que muestra la pantalla que corresponde a la ruta actual.
+// Recibe un NavController y una ruta inicial.
+//•	composable(route) { }: función de NavGraphBuilder que registra un destino: asocia una ruta (texto)
+// con la pantalla que se dibuja.
+//En tu proyecto: ui/AppNavegacion.kt: rememberNavController(), NavHost(startDestination = Bienvenida)
+// y 10 llamadas a composable(...). Dos reciben argumento con navArgument("id"). Las rutas están en
+// data/AppScreens.kt.

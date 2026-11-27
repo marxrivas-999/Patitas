@@ -38,7 +38,7 @@ android {
     }
 }
 
-dependencies {
+dependencies { //Librerias xd
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.runtime.compose)
@@ -52,18 +52,17 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     debugImplementation(libs.androidx.compose.ui.tooling)
 
-    // Base de datos Room
+
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
-    // KSP es una API simple y potente para analizar anotaciones de Kotlin.
     ksp(libs.room.compiler)
 
-    // Inyección de dependencias con Hilt
+
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
-    // Consumo de API REST (Práctica 2): Retrofit + kotlinx.serialization + OkHttp
+
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.retrofit)
     implementation(libs.retrofit.serialization.converter)
